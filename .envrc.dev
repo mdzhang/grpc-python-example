@@ -1,0 +1,4 @@
+export DATABASE_URL=postgresql://postgres@localhost:5432/grpc_python_example
+export GRPC_SERVER_URL=localhost:50051
+export HOST=localhost
+export PORT=50051

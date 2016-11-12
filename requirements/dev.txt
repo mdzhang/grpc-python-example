@@ -1,0 +1,5 @@
+-r docker.txt
+click==6.6
+pre-commit==0.9.2
+pycmd==1.2
+pylint==1.6.4

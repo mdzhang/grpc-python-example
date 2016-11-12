@@ -1,0 +1,10 @@
+-   repo: local
+    hooks:
+    -   id: pylint
+        name: pylint
+        entry: pylint
+        # Use system to account for pyenv-virtualenv
+        # https://github.com/pre-commit/pre-commit/issues/178
+        language: system
+        files: \.py$
+        args: []

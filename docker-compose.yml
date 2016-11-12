@@ -1,0 +1,10 @@
+version: '2'
+services:
+  postgres:
+    image: postgres:9.6
+    networks:
+      default:
+        aliases:
+         - postgres.grpc_python_example.site
+    ports:
+      - "5432:5432"

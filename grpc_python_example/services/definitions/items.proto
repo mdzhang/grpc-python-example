@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package grpc_python_example;
+
+// Manages item data.
+service ItemMaster {
+  // Get an item by id.
+  rpc GetItem (GetItemRequest) returns (GetItemResponse) {}
+}
+
+message Item {
+  int32 id = 1;
+  string code = 2;
+  string name = 3;
+}
+
+// The request message for [ItemMaster.GetItem].
+message GetItemRequest {
+  int32 id = 1;
+}
+
+// The response message for [ItemMaster.GetItem].
+message GetItemResponse {
+  Item item = 1;
+}

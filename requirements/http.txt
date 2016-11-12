@@ -1,0 +1,6 @@
+-r common.txt
+gunicorn==19.6.0
+healthcheck==1.3.1
+Flask==0.11.1
+flask-ripozo==1.0.4
+ripozo==1.3.0
