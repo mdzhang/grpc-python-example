@@ -2,4 +2,4 @@
 
 - Add HTTP client
 - Add tests
-- Database seed or migration capability
+- Docker mount database volume

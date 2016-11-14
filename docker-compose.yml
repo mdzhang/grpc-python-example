@@ -1,7 +1,7 @@
 version: '2'
 services:
   grpc_server:
-    command: dockerize -wait tcp://postgres.grpc_python_example.site:5432 make run-server
+    command: dockerize -wait tcp://postgres.grpc_python_example.site:5432 ./scripts/run-server.dev.sh
     image: grpc_python_example
     depends_on:
       - postgres

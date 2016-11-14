@@ -36,6 +36,7 @@ protogen:
 				 $(SERVICE_DEFN_DIR)/items.proto $(SERVICE_DEFN_DIR)/health.proto
 
 # Usage: make run-text-client ARGS="check_health"
+# 			 make run-text-client ARGS="get_item 1"
 .PHONY: run-text-client
 run-text-client:
 	python -m $(PROJECT_NAME).clients.text $(ARGS)

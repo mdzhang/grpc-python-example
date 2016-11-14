@@ -18,15 +18,15 @@ def _check_health():
 
 
 @click.command()
-@click.argument('facility_id')
-def _get_facility(facility_id):
-    """Get a facility by id."""
-    click.echo(_client.get_facility(int(facility_id)))
+@click.argument('item_id')
+def _get_item(item_id):
+    """Get an item by id."""
+    click.echo(_client.get_item(int(item_id)))
 
 
 _cmds = {
     'check_health': _check_health,
-    'get_facility': _get_facility
+    'get_item': _get_item
 }
 
 
