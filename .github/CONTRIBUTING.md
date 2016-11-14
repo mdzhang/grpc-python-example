@@ -97,7 +97,7 @@
     make build
     ```
 
-2. Bring up database and grpc server docker containers
+2. Bring up database, grpc server, and http client docker containers
     ```
     make up
     ```

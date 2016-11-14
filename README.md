@@ -1,23 +1,14 @@
 # grpc_python_example
 
-Shows an example of a GRPC server that communicates with a Postgres database
-using SQLAlchemy as an ORM, and Alembic for migrations.
+Demos the following:
 
-Also shows example clients including:
-
-* a RESTful, JSON-API client using Flask
-* a text client using custom classes and Click to provide a cli
+* a GRPC server that communicates with a Postgres database using SQLAlchemy as an ORM, and Alembic for migrations.
+* a RESTful, [JSON-API compliant](http://jsonapi.org/format/) grpc client using Flask
+* a text grpc client using custom classes and Click to provide a cli
+* example Dockerfile and docker-compose.yml file that dockerizes server, clients, and database
 
 ## Table of Contents
 
-* [Contributing](#contributing)
+* [Contributing](.github/CONTRIBUTING.md)
 * [Todo](.github/TODO.md)
-* [License](#license)
-
-## Contributing
-
-For more on local installation, run, and test commands, see [here](.github/CONTRIBUTING.md).
-
-## License
-
-MIT
+* [License](.github/LICENSE.md)
