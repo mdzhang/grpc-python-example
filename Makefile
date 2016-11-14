@@ -41,6 +41,10 @@ protogen:
 run-text-client:
 	python -m $(PROJECT_NAME).clients.text $(ARGS)
 
+.PHONY: run-http-client
+run-http-client:
+	gunicorn -b 0.0.0.0:4000 $(PROJECT_NAME).clients.http.wsgi:app
+
 .PHONY: run-server
 run-server:
 	python -m $(PROJECT_NAME).grpc_server

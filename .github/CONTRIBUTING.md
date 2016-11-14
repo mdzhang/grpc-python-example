@@ -31,8 +31,8 @@
 
 1. Clone this repo
     ```
-    git clone git@github.com:mdzhang/grpc_python_example.git
-    cd grpc_python_example
+    git clone git@github.com:mdzhang/grpc-python-example.git
+    cd grpc-python-example
     ```
 
 2. Install Homebrew packages
@@ -105,6 +105,11 @@
 3. Run text client from host
     ```
     make run-text-client ARGS="check_health"
+    ```
+
+4. View http client from browser
+    ```
+    open http://localhost:4000
     ```
 
 ## Testing

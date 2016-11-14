@@ -18,6 +18,21 @@ services:
       - "50051:50051"
     volumes:
       - ./:/opt/grpc_python_example/
+  http_client:
+    command: dockerize -wait tcp://grpc.grpc_python_example.site:50051 -timeout 30s make run-http-client 
+    image: grpc_python_example
+    depends_on:
+      - grpc_server
+    environment:
+      - GRPC_SERVER_URL=grpc.grpc_python_example.site:50051
+    networks:
+      default:
+        aliases:
+          - http_client.grpc_python_example.site
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./:/opt/grpc_python_example/
   postgres:
     image: postgres:9.6
     networks:
