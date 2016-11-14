@@ -92,17 +92,17 @@
 
 ## Running
 
-1. Bring database up
+1. Build the project containers at least once
+    ```
+    make build
+    ```
+
+2. Bring up database and grpc server docker containers
     ```
     make up
     ```
 
-2. Run server
-    ```
-    make run-server
-    ```
-
-3. Run text client
+3. Run text client from host
     ```
     make run-text-client ARGS="check_health"
     ```

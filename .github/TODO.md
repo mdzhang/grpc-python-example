@@ -2,4 +2,4 @@
 
 - Add HTTP client
 - Add tests
-- Dockerize server/clients
+- Database seed or migration capability

@@ -1,10 +1,28 @@
 version: '2'
 services:
+  grpc_server:
+    command: dockerize -wait tcp://postgres.grpc_python_example.site:5432 make run-server
+    image: grpc_python_example
+    depends_on:
+      - postgres
+    environment:
+      # must bind to [::] for port forwarding to work properly
+      - HOST=[::]
+      - PORT=50051
+      - DATABASE_URL=postgresql://postgres@postgres.grpc_python_example.site:5432/grpc_python_example
+    networks:
+      default:
+        aliases:
+          - grpc.grpc_python_example.site
+    ports:
+      - "50051:50051"
+    volumes:
+      - ./:/opt/grpc_python_example/
   postgres:
     image: postgres:9.6
     networks:
       default:
         aliases:
-         - postgres.grpc_python_example.site
+          - postgres.grpc_python_example.site
     ports:
       - "5432:5432"

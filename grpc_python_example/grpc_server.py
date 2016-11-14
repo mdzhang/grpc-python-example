@@ -10,7 +10,7 @@ from grpc_python_example.services.implementations import (
     HealthServicer, ItemMasterServicer)
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
-log = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
 
 
 def serve():
@@ -28,14 +28,14 @@ def serve():
 
     # start server
     address = '%s:%s' % (os.environ['HOST'], os.environ['PORT'])
-    log.info('Starting grpc server at %s', address)
+    logging.info('Starting grpc server at %s', address)
 
     server.add_insecure_port(address)
     server.start()
 
     # mark server as healthy
     health_servicer.set('', health_pb2.HealthCheckResponse.SERVING)
-    log.info('grpc listening at %s', address)
+    logging.info('grpc listening at %s', address)
 
     # start() does not block so sleep-loop
     try:
