@@ -9,7 +9,7 @@ from ripozo.adapters import JSONAPIAdapter
 from ripozo.exceptions import RestException
 from healthcheck import HealthCheck
 from grpc_python_example.services.stubs import health_pb2
-from grpc_python_example.clients.http.services import health_conn
+from grpc_python_example.apis.http.services import health_conn
 
 # pylint: disable=invalid-name
 health = Blueprint('health', __name__)

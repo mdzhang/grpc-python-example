@@ -1,5 +1,5 @@
-"""Generated python stubs for grpc_python_example services.
+"""Generated python grpc stubs for grpc_python_example services.
 
-Services are defined in grpc_python_example.services.services.definitions.
+Service interfaces are defined in grpc_python_example.services.definitions.
 
 Output by the `make protogen` command."""

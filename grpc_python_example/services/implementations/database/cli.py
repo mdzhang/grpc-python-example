@@ -5,7 +5,8 @@ Exposes commands as a click multicommand `cli`.
 
 import click
 from sqlalchemy_utils import database_exists, create_database
-from grpc_python_example.database import connection as db
+from grpc_python_example.services.implementations.database import (
+        connection as db)
 
 
 @click.command()

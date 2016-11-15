@@ -1,4 +1,4 @@
-# All services are built into docker container
+# Core service and all apis are built into docker container
 -r common.txt
 -r grpc.txt
 -r http.txt

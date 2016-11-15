@@ -1,6 +1,6 @@
 """Module that setups grpc service connectors.
 
-Connectors are used throughout grpc_python_example.clients.http."""
+Connectors are used throughout grpc_python_example.apis.http."""
 from grpc_python_example.services.stubs import health_pb2, items_pb2
 from grpc_python_example.services import GrpcServiceConnector
 

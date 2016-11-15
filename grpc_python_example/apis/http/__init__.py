@@ -1,15 +1,18 @@
 #!/usr/bin/env python
 
-"""RESTful, JSON-API compliant wrapper around grpc_python_example' grpc services."""
+"""RESTful, JSON-API compliant wrapper around grpc_python_example' services.
+
+Interfaces with grpc stubs which in turn interface with core service logic.
+"""
 import grpc
 from flask import Flask, Response
 from ripozo.adapters import JSONAPIAdapter
 from ripozo.exceptions import RestException
-from grpc_python_example.clients.http.controllers.main import main
-from grpc_python_example.clients.http.controllers.health import health
-from grpc_python_example.clients.http.controllers.items import items
-from grpc_python_example.clients.http.services import health_conn, items_conn
-from grpc_python_example.clients.http.exceptions import (
+from grpc_python_example.apis.http.controllers.main import main
+from grpc_python_example.apis.http.controllers.health import health
+from grpc_python_example.apis.http.controllers.items import items
+from grpc_python_example.apis.http.services import health_conn, items_conn
+from grpc_python_example.apis.http.exceptions import (
     InternalServerException, NotFoundException)
 
 
@@ -17,7 +20,7 @@ def create_app(object_name):
     """A flask application factory for grpc_python_example.
     Args:
         object_name: the python path of the config object,
-                     e.g. grpc_python_example.clients.http.settings.DevelopmentConfig
+                     e.g. grpc_python_example.apis.http.settings.DevelopmentConfig
     """
     app = Flask(__name__)
 

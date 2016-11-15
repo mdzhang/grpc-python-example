@@ -1,7 +1,8 @@
 import logging
 import grpc
 from grpc_python_example.services.stubs import items_pb2
-from grpc_python_example.database import connection as db, models
+from grpc_python_example.services.implementations.database import (
+        connection as db, models)
 
 log = logging.getLogger(__name__)
 

@@ -4,7 +4,7 @@ Exposes commands as a click group `basic_cmds`.
 """
 
 import click
-from grpc_python_example.clients.text import TextClient
+from grpc_python_example.apis.text import TextClient
 
 __all__ = ['cli']
 

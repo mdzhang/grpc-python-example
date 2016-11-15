@@ -1,7 +1,7 @@
 version: '2'
 services:
-  grpc_server:
-    command: dockerize -wait tcp://postgres.grpc_python_example.site:5432 ./scripts/run-server.dev.sh
+  grpc_api:
+    command: dockerize -wait tcp://postgres.grpc_python_example.site:5432 ./scripts/run-grpc-api.dev.sh
     image: grpc_python_example
     depends_on:
       - postgres
@@ -13,22 +13,22 @@ services:
     networks:
       default:
         aliases:
-          - grpc.grpc_python_example.site
+          - grpc_api.grpc_python_example.site
     ports:
       - "50051:50051"
     volumes:
       - ./:/opt/grpc_python_example/
-  http_client:
-    command: dockerize -wait tcp://grpc.grpc_python_example.site:50051 -timeout 30s make run-http-client 
+  http_api:
+    command: dockerize -wait tcp://grpc_api.grpc_python_example.site:50051 -timeout 30s make run-http-api
     image: grpc_python_example
     depends_on:
-      - grpc_server
+      - grpc_api
     environment:
-      - GRPC_SERVER_URL=grpc.grpc_python_example.site:50051
+      - GRPC_API_URL=grpc_api.grpc_python_example.site:50051
     networks:
       default:
         aliases:
-          - http_client.grpc_python_example.site
+          - http_api.grpc_python_example.site
     ports:
       - "4000:4000"
     volumes:

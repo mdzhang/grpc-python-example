@@ -1,4 +1,4 @@
-"""Per environment settings for grpc_python_example.clients.http."""
+"""Per environment settings for grpc_python_example.apis.http."""
 
 # pylint: disable=too-few-public-methods, missing-docstring
 

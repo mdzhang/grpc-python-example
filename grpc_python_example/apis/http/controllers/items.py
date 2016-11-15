@@ -9,7 +9,7 @@ from ripozo.manager_base import BaseManager
 from ripozo.adapters import JSONAPIAdapter
 from ripozo.resources.fields.common import StringField, IntegerField
 from grpc_python_example.services.stubs import items_pb2
-from grpc_python_example.clients.http.services import items_conn
+from grpc_python_example.apis.http.services import items_conn
 
 # pylint: disable=invalid-name
 items = Blueprint('items', __name__)

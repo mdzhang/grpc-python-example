@@ -17,7 +17,7 @@ class GrpcServiceConnector(object):
     """
 
     def __init__(self, service_class):
-        self._grpc_server_address = os.environ['GRPC_SERVER_URL']
+        self._grpc_api_address = os.environ['GRPC_API_URL']
         self._channel = None
         self._stub = None
         self._service_class = service_class
@@ -29,7 +29,7 @@ class GrpcServiceConnector(object):
             in which case any RPC calls will return with a
             grpc.StatusCode.UNAVAILABLE.
         """
-        self._channel = grpc.insecure_channel(self._grpc_server_address)
+        self._channel = grpc.insecure_channel(self._grpc_api_address)
         self._stub = self._service_class(self._channel)
 
     @property

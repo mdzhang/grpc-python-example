@@ -35,19 +35,19 @@ protogen:
 				 --grpc_python_out=$(SERVICE_STUB_DIR) \
 				 $(SERVICE_DEFN_DIR)/items.proto $(SERVICE_DEFN_DIR)/health.proto
 
-# Usage: make run-text-client ARGS="check_health"
-# 			 make run-text-client ARGS="get_item 1"
-.PHONY: run-text-client
-run-text-client:
-	python -m $(PROJECT_NAME).clients.text $(ARGS)
+# Usage: make run-text-api ARGS="check_health"
+# 			 make run-text-api ARGS="get_item 1"
+.PHONY: run-text-api
+run-text-api:
+	python -m $(PROJECT_NAME).apis.text $(ARGS)
 
-.PHONY: run-http-client
-run-http-client:
-	gunicorn -b 0.0.0.0:4000 $(PROJECT_NAME).clients.http.wsgi:app
+.PHONY: run-http-api
+run-http-api:
+	gunicorn -b 0.0.0.0:4000 $(PROJECT_NAME).apis.http.wsgi:app
 
-.PHONY: run-server
-run-server:
-	python -m $(PROJECT_NAME).grpc_server
+.PHONY: run-grpc-api
+run-grpc-api:
+	python -m $(PROJECT_NAME).apis.grpc
 
 .PHONY: up
 up:

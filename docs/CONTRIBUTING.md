@@ -97,17 +97,17 @@
     make build
     ```
 
-2. Bring up database, grpc server, and http client docker containers
+2. Bring up database, grpc and http apis as docker containers
     ```
     make up
     ```
 
-3. Run text client from host
+3. Run text api from host
     ```
-    make run-text-client ARGS="check_health"
+    make run-text-api ARGS="check_health"
     ```
 
-4. View http client from browser
+4. View http api from browser
     ```
     open http://localhost:4000
     ```

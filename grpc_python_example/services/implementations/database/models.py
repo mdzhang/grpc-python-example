@@ -1,6 +1,7 @@
 """Module with all models used by grpc_python_example."""
 from sqlalchemy.inspection import inspect as _inspect
-from grpc_python_example.database import connection as db
+from grpc_python_example.services.implementations.database import (
+        connection as db)
 
 
 __all__ = ['Item']

@@ -1,4 +1,4 @@
-"""Module with exceptions that grpc_python_example.clients.http explicitly uses."""
+"""Module with exceptions that grpc_python_example.apis.http explicitly uses."""
 from ripozo.exceptions import RestException
 
 
