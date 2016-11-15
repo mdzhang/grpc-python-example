@@ -11,6 +11,30 @@ Demos the following:
 
 ## Table of Contents
 
+* [Description](#description)
 * [Contributing](docs/CONTRIBUTING.md)
 * [Todo](docs/TODO.md)
 * [License](docs/LICENSE.md)
+
+## Description
+
+(AFAIK)
+
+![grpc architecture diagram](img/grpc_arch_diagram.png)
+
+### Pros
+
+#### gRPC server
+
+- Fast! Uses HTTP 2 and encodes requests in binary format
+
+#### Language agnostic stubs
+
+- Don't have to reimplement same client in multiple languages
+- Stubs are just plain old objects/modules so don't have to worry about it not working with one framework or another
+- Just have to generate stub from protobuf definitions in an e.g. organization level `.proto` repository
+
+### Cons
+
+- Documentation is lacking
+- Few established best practices, conventions, code snippets etc.
